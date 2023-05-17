@@ -1,0 +1,42 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'user_index.html'%}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td>Contractor name</td>
+
+      <td>Plan</td>
+      <td>Details</td>
+      <td>Image</td>
+      <td>Work</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+
+      <td>&nbsp;{{i['fname']}} {{i['lname']}}</td>
+
+      <td>&nbsp;{{i['plan']}}</td>
+      <td>&nbsp;{{i['details']}}</td>
+      <td><a href=" ../static/plan/{{i['image']}}"><img src="../static/plan/{{i['image']}}" height="100dp" width="100"></a></td>
+      <td>&nbsp;{{i['work']}}</td>
+      <td>{% if i['pstatus']=='Accepted' %}Accepted {% elif i['pstatus']=='Rejected' %}Rejected {% else %}
+        <p><a href="accept_plan?id={{i['pid']}}">Accept</a></p>
+          <p><a href="reject_plan?id={{i['pid']}}">Reject</a></p> {% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

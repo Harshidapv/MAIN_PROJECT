@@ -1,0 +1,66 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contr_index.html'%}
+{% block body %}
+
+<body>
+<form id="form2" name="form2" method="post" action="edit_workers_post">
+  <table width="227" border="1"class="table table-hover">
+    <tr>
+      <td width="164">Fname</td>
+      <td width="47"><label>
+      <input type="text" name="textfield" value="{{val['fname']}}" required pattern="[A-Z a-z]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Lname</td>
+      <td><label>
+      <input type="text" name="textfield2"value="{{val['lname']}}" required pattern="[A-Z a-z]{1,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+      <input type="text" name="textfield3" value="{{val['place']}}" required pattern="[A-Z a-z]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Post</td>
+      <td><label>
+      <input type="text" name="textfield4"value="{{val['post']}}" required pattern="[A-Z a-z]{3,25}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><label>
+      <input type="text" name="textfield5"value="{{val['pin']}}" required pattern="[0-9]{6}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label>
+      <input type="text" name="textfield6"value="{{val['phone']}}" required pattern="[6789][0-9]{9}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+      <input type="text" name="textfield7" value={{val['email']}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="update" />
+        </label>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

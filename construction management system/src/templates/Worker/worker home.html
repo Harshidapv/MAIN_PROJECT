@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--<style type="text/css">-->
+<!--&lt;!&ndash;-->
+<!--.style1 {-->
+	<!--font-family: "Times New Roman", Times, serif;-->
+	<!--font-weight: bold;-->
+<!--}-->
+<!--&ndash;&gt;-->
+<!--</style>-->
+<!--</head>-->
+{% extends 'worker_index.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td><div align="center" class="style1">WORKER</div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><a href="view_assigned_work_by_workers1" class="style1">VIEW ASSIGNED WORKS</a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><a href="view_salary" class="style1">VIEW SALARY</a></div></td>
+    </tr>
+    <tr>
+      <td><div align="center"><a href="/" class="style1">LOGOUT</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

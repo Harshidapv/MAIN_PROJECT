@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+{% extends 'vendor_index.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td>Username</td>
+      <td>Product</td>
+      <td>Date</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['fname']}}  {{i['lname']}}</td>
+      <td>&nbsp;{{i['pname']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td><p><a href="accept_order?id={{i['orid']}}">Accept</a></p>
+          <p><a href="Reject_order?id={{i['orid']}}">Reject</a></p></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

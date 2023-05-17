@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contr_index.html'%}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td>Username</td>
+      <td>Work</td>
+      <td>Details</td>
+      <td>Date</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['fname']}} {{i['lname']}}</td>
+      <td>{{i['work']}}</td>
+      <td>{{i['details']}}</td>
+      <td>{{i['date']}}</td>
+      <td>
+        {% if i['status']=='accepted'%}
+        <p><a href="work_request2?id={{i['rcid']}}">Assign</a></p>
+                {% elif i['status']=='rejected'%}Rejected
+                        {% elif i['status']=='Assigned'%}Assigned
+
+        {% else %}
+
+
+        <p><a href="accept_contractor?id={{i['rcid']}}">Accept</a> </p>
+        <p><a href="rejected_contractor?id={{i['rcid']}}">Reject</a> {% endif %}</p>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

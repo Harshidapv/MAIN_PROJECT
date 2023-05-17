@@ -1,0 +1,50 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'contr_index.html'%}
+{% block body %}
+
+<body>
+<form id="form3" name="form3" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td>Product name </td>
+      <td>Stock</td>
+      <td>Image</td>
+      <td>Price</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['pname']}}</td>
+      <td>&nbsp;{{i['stock']}}</td>
+      <td><img src="../static/product/{{i['image']}}" width="100dp" height="100dp"></td>
+      <td>&nbsp;{{i['price']}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4"><label>Total
+        </label>
+      </td>
+      <td>{{val1['amount']}}</td>
+    </tr>
+    <tr>
+      <td colspan="4"><label>
+        <!--<input type="submit" name="Submit" value="Add" />-->
+        <a href="view_product3">Add</a>
+        </label>
+          <label>
+            <a href="order_now?id={{val1['oid']}}" class="btn btn-success">Order now</a>
+
+        <!--<a href="user_pay_proceed?id={{val1['amount']}}">Paynow</a>-->
+          </label>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

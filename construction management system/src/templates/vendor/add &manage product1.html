@@ -1,0 +1,39 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--</head>-->
+{% extends 'vendor_index.html'%}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_and_manage_product2">
+  <label></label>
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td>Product</td>
+      <td>Image</td>
+      <td>Price</td>
+      <td>Stock</td>
+      <td>&nbsp;</td>
+    </tr>
+    {%for i in val %}
+    <tr>
+
+      <td>&nbsp;{{i['pname']}}</td>
+      <td><img src="../static/product/{{i['image']}}" width="100dp" height="100dp"> {{i['image']}}</td>
+      <td>&nbsp;{{i['price']}}</td>
+      <td>{{i['stock']}}</td>
+      <td><p><a href="edit_product?id={{i['pid']}}">Edit</a></p>
+          <p><a href="delete_product?id={{i['pid']}}">Delete</a></p></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="5"><input type="submit" name="Submit" value="Add" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
+

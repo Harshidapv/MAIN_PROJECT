@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--<style type="text/css">-->
+<!--&lt;!&ndash;-->
+<!--.style3 {font-family: "Times New Roman", Times, serif; font-weight: bold; }-->
+<!--&ndash;&gt;-->
+<!--</style>-->
+<!--</head>-->
+{% extends 'aindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1"class="table table-hover">
+    <tr>
+      <td><span class="style3">Complaint</span></td>
+      <td><span class="style3">Date</span></td>
+      <td><span class="style3">Username</span></td>
+      <td><span class="style3">Reply</span></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['complaint']}}</td>
+      <td>{{i['date']}}</td>
+      <td>{{i['fname']}}{{i['lname']}}</td>
+      <td>{% if i['reply']=='pending' %}<a href="complaint_reply?id={{i['coid']}}" class="style3">Reply</a>{% else %} replied {% endif %}</td>
+    </tr>
+        {% endfor %}
+
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

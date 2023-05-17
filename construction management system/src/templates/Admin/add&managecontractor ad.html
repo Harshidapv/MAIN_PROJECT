@@ -1,0 +1,52 @@
+[[<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'aindex.html' %}
+{% block body %}
+<!--<head>-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+<!--<title>Untitled Document</title>-->
+<!--<style type="text/css">-->
+<!--&lt;!&ndash;-->
+<!--.style1 {-->
+	<!--font-family: "Times New Roman", Times, serif;-->
+	<!--font-weight: bold;-->
+<!--}-->
+<!--.style2 {font-family: "Times New Roman", Times, serif}-->
+<!--&ndash;&gt;-->
+<!--</style>-->
+<!--</head>-->
+
+<body>
+<form id="form2" name="form2" method="post" action="addcon_add">
+  <table width="234" border="1"class="table table-hover">
+    <tr>
+      <td width="37"><span class="style1">Name</span></td>
+      <td width="52"><span class="style1">Address</span></td>
+      <td width="37"><span class="style1">phone</span></td>
+      <td width="33"><span class="style1">Email</span></td>
+      <td width="41"><strong>Catogory</strong></td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['fname']}} {{i['lname']}}</td>
+      <td>{{i['place']}} {{i['post']}} {{i['pin']}}</td>
+      <td>{{i['phone']}}</td>
+      <td>{{i['email']}}</td>
+      <td>{{i['catogory']}}</td>
+      <td><p class="style2"><strong><a href="edit_contractors?id={{i['lid']}}">Edit</a></strong></p>
+          <p class="style2"><strong><a href="delete_contractor?id={{i['lid']}}">Delete</a></strong></p></td>
+
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="5"><strong>
+        <label>
+        <input type="submit" name="Submit" value="Add" />
+        </label>
+      </strong> </td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
